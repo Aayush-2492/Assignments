@@ -140,17 +140,30 @@ In a box containing 100 bulbs, 10 are defective.
 The probability that out of a sample of 5 bulbs,
 none is defective is?
 \section*{Solution}
-Probability of getting a defective bulb $= p = \dfrac{10}{100} = \dfrac{1}{10}$\\\\
-Let $q$ be the probability of not finding a defective bulb. By Complement Law,\\\\
-$q = 1-p = \dfrac{9}{10}$\\\\
-Let X be the random variable function for number of defective bulbs out of a sample of 5 bulbs and k be the number of defective bulbs out of a sample of five bulbs\\\\
+Let $p$ be the probability of finding a defective bulb. 
+\begin{equation}\label{p}
+p = \dfrac{10}{100} = \dfrac{1}{10}
+\end{equation}
+\\\\
+Let $q$ be the probability of not finding a defective bulb. \\
+By Complement Law,\\\\
+\begin{equation}\label{q}
+q = 1-p = 1-\dfrac{1}{10} = \dfrac{9}{10}
+\end{equation}
+\\\\Let X be the random variable function for number of defective bulbs out of a sample of 5 bulbs and k be the number of defective bulbs out of a sample of five bulbs\\\\
 By Binomial Distribution,\\\\
-$P(X=k) = \binom{5}{k} p^{k} q^{5-k}$\\\\
+\begin{equation}
+P(X=k) = \binom{5}{k} p^{k} q^{5-k}
+\end{equation}
+\\\\
 where $P(X=k)$ is the probability of finding k defective bulbs out of a sample of 5 bulbs.\\\\
-$P(X=0) = \binom{5}{0} p^{0} q^{5}$ = Probability of finding zero defective bulbs\\\\
-Substituting values of $p$ and $q$, we get,\\\\
-$P(X=0) = \left(\frac{9}{10}\right)^5$\\\\
-Therefore, Required probability $$= \left(\frac{9}{10}\right)^5$$
+Probability of finding zero defective bulbs \\= $P(X=0) \\\\= \binom{5}{0} p^{0} q^{5}$ \\\\
+Substituting values of $p$ and $q$ from equation \ref{p} and \ref{q}, we get,\\\\
+\begin{equation}
+P(X=0) = \left(\frac{9}{10}\right)^5
+\end{equation}
+\\\\
+Therefore, required probability is$$= \left(\frac{9}{10}\right)^5$$
 
 
 
