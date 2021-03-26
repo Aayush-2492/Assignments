@@ -113,7 +113,7 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{AI1103-Assignment 3}
+\title{AI1103-Assignment 4}
 \author{Name : Aayush Patel, Roll No.: CS20BTECH11001}
 \maketitle
 \newpage
@@ -122,87 +122,61 @@ columns=fullflexible
 \renewcommand{\thetable}{\theenumi}
 Python codes : 
 \begin{lstlisting}
-https://github.com/Aayush-2492/Assignments/tree/main/Assignment3/code
+https://github.com/Aayush-2492/Assignments/tree/main/Assignment4/code
 \end{lstlisting}
 %
 Latex codes : 
 %
 \begin{lstlisting}
-https://github.com/Aayush-2492/Assignments/tree/main/Assignment3
+https://github.com/Aayush-2492/Assignments/tree/main/Assignment4
 \end{lstlisting}
 \section*{Question 29}
-Raju has four fair coins and one fair dice. At first Raju tosses a coin. If the coin shows head then he rolls the dice and the number that dice shows is taken as his score. If the coin shows tail then he tosses three more coins and the total number of tails shown (including the first one) is taken as his score. If Raju tells that his score is 2 then the probability that he rolled the dice is (up to two decimal places):
-
+Let X be a random variable with probability density function:\\
+\[ f(t)=\begin{cases} 
+      e^{-t} & t\geq 0 \\
+      0 & t<0
+  \end{cases}
+\]
+Let $b>a>0$. Then the probability $P(X\leq b|X\geq a)$
+\begin{enumerate}[label=\Alph*)]
+    \item b-a
+    \item a
+    \item b
+    \item a+b
+\end{enumerate}
 \section*{Solution}
-Let $X_i$ denote the random variable function for the $i$th coin $i\in\{1,2,3,4\}$.\\
-$X_i\in(0,1)$ where 0 represents head and 1 represents tail $i\in\{1,2,3,4\}$.
-\\[5pt]
-\begin{tabular}{|c|c|c|}
-\hline
-     &Head&Tail  \\
-     \hline
-     $X_i=k$&0&1\\
-     \hline
-\end{tabular}
-\begin{equation}\label{coin}
-P(X_i=k)=\dfrac{1}{2} 
-\end{equation}
-$k\in\{0,1\}$ and $i\in\{1,2,3,4\}$.
-\\
-Let $Y$ denote the random variable function for the dice.\\
-$Y\in(1,2,3,4,5,6)$ where 1 represents dice showing 1 and so on.
-\\[5pt]
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-     Dice number&1&2&3&4&5&6  \\
-     \hline
-     $Y=k$&1&2&3&4&5&6\\
-     \hline
-\end{tabular}
-\\
-\begin{equation}\label{dice}
-P(Y=k)=\dfrac{1}{6} 
-\end{equation}
-$k\in\{1,2,3,4,5,6\}$.
-\\\\
-Let B denote the event that out of last three coins, only one shows tail. 
-\begin{equation}\label{eventb}
-P(B)=\dfrac{3}{8}
-\end{equation}
-\\\\
-Since tossing a coin and rolling a dice are independent events,
-\begin{equation}\label{independent theorem}
-P( (X_i=k)\cdot(Y=l) )= P(X_i=k)\cdot P(Y=l)
-\end{equation}
-$k\in\{0,1\}$ and $l\in\{1,2,3,4,5,6\}$.
-\\\\
-Let A denote the event that the score is 2.
-\\\\
-Clearly,
+
+Let $F_X(t)$ denote the Cumulative Distribution Function for random variable $X$.\\
 \begin{align}
-P(A)\nonumber&=P(Y=2|X_1=0)\cdot P(X_1=0) \\
-    &+ P(B|X_1=1)\cdot P(X_1=1) 
+F_X(t) &= \int_{-\infty}^{t} f(t) \,dt
 \\[\parskip]
-&=P( (X_1=0)\cdot(Y=2) ) + P( (X_1=1)\cdot B)
+&= \int_{-\infty}^{0} 0 \,dt + \int_{0}^{t} e^{-t} \,dt
 \\[\parskip]
-&=P(X_1=0)\cdot P(Y=2)+ P(X_1=1) \cdot P(B)
+&= -e^{-t}\Big|_{0}^t
 \\[\parskip]
-&=\dfrac{1}{2} \cdot \dfrac{1}{6} + \dfrac{1}{2} \cdot \dfrac{3}{8}
-\\[\parskip]
-&=\dfrac{13}{48}
+&= 1-e^{-t}
 \end{align}
-We have to find $P(X_1=0|A)$
 \begin{align}
-P(X_1=0|A)&=\dfrac{P(A\cdot (X_1=0) )}{P(A)}
+P(a\leq X \leq b) &= F_X(b)-F_X(a) 
 \\[\parskip]
-&=\dfrac{P(X_1=0)\cdot P(Y=2)}{P(A)}
-\\[\parskip]
-&=\dfrac{ \dfrac{1}{2} \cdot \dfrac{1}{6} }{\dfrac{13}{48}}
-\\[\parskip]
-&=\dfrac{4}{13}
-\\[\parskip]
-&=0.31
+&= e^{-a}-e^{-b}
 \end{align}
-\\
-\textbf{Therefore, required probability = 0.31}
+\begin{align}
+P(X\geq a) &= \lim_{k\to\infty} F_X(k)-F_X(a) 
+\\[\parskip]
+&= e^{-a}
+\end{align}
+\begin{align}
+P(X\leq b|X\geq a) &= \dfrac{P((X\leq b)\cdot (X\geq a))}{P(X\geq a)}
+\\[\parskip]
+&= \dfrac{P(a\leq X \leq b)}{P(X\geq a)}
+\\[\parskip]
+&=\dfrac{e^{-a}-e^{-b}}{e^{-a}}
+\\[\parskip]
+&=1-e^{-(b-a)}
+\end{align}
+Therefore the required probability depends on $b-a$\\
+Option (A) is correct.\\\\
+Plot for probability density function.\\
+\includegraphics[scale=0.75]{plot.png}
 \end{document}
