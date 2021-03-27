@@ -145,14 +145,23 @@ Let $b>a>0$. Then the probability $P(X\leq b|X\geq a)$
     \item a+b
 \end{enumerate}
 \section*{Solution}
+
+Let $F_X(t)$ denote the Cumulative Distribution Function for random variable $X$.\\
 \begin{align}
-P(X\leq b|X\geq a) &= \dfrac{P((X\leq b)\cdot (X\geq a))}{P(X\geq a)}
+F_X(t) &= \int_{-\infty}^{t} f(t) \,dt
+\\[\parskip]
+&= \int_{-\infty}^{0} 0 \,dt + \int_{0}^{t} e^{-t} \,dt
+\\[\parskip]
+&= -e^{-t}\Big|_{0}^t
+\\[\parskip]
+&= 1-e^{-t}
+\end{align}
+\begin{align}
+P(X\leq b|X\geq a) &= \dfrac{P((X\leq b),(X\geq a))}{P(X\geq a)}
 \\[\parskip]
 &= \dfrac{P(a\leq X \leq b)}{P(X\geq a)}
 \\[\parskip]
-&= \dfrac{\int_{a}^{b} e^{-t} \,dt}{\int_{a}^{\infty} e^{-t} \,dt}
-\\[\parskip]
-&= \dfrac{-e^{-t}\Big|_a^b}{-e^{-t}\Big|_a^\infty}
+&=\dfrac{F_X(b)-F_X(a)}{\displaystyle\lim_{k\to\infty} F_X(k)-F_X(a)}
 \\[\parskip]
 &=\dfrac{e^{-a}-e^{-b}}{e^{-a}}
 \\[\parskip]
