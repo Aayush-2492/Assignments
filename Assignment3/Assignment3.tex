@@ -56,6 +56,10 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
 
+\newcommand{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+
 \lstset{
 %language=C,
 frame=single, 
@@ -186,14 +190,17 @@ $k\in\{1,2,3,4,5,6\}$.
       }
     };
 \end{tikzpicture}
-Let B denote the event that out of last three coins, only one shows tail. 
-\begin{equation}\label{eventb}
-P(B)=\dfrac{3}{8}
-\end{equation}
+Let B denote the event that out of last three coins, only one shows tail. \\
+By Binomial Distribution,
+\begin{align}
+P(B)&=\comb{3}{1}\brak{{\dfrac{1}{2}}}^3
+\\[\parskip]
+&=\dfrac{3}{8}
+\end{align}
 \\\\
 Since tossing a coin and rolling a dice are independent events,
 \begin{equation}\label{independent theorem}
-P( (X_i=k)\cdot(Y=l) )= P(X_i=k)\cdot P(Y=l)
+P( (X_i=k),(Y=l) )= P(X_i=k)\cdot P(Y=l)
 \end{equation}
 $k\in\{0,1\}$ and $l\in\{1,2,3,4,5,6\}$.
 \\\\
@@ -204,7 +211,7 @@ Clearly,
 P(A)\nonumber&=P(Y=2|X_1=0)\cdot P(X_1=0) \\
     &+ P(B|X_1=1)\cdot P(X_1=1) 
 \\[\parskip]
-&=P( (X_1=0)\cdot(Y=2) ) + P( (X_1=1)\cdot B)
+&=P( (X_1=0),(Y=2) ) + P( (X_1=1), B)
 \\[\parskip]
 &=P(X_1=0)\cdot P(Y=2)+ P(X_1=1) \cdot P(B)
 \\[\parskip]
@@ -214,7 +221,7 @@ P(A)\nonumber&=P(Y=2|X_1=0)\cdot P(X_1=0) \\
 \end{align}
 We have to find $P(X_1=0|A)$
 \begin{align}
-P(X_1=0|A)&=\dfrac{P(A\cdot (X_1=0) )}{P(A)}
+P(X_1=0|A)&=\dfrac{P(A,(X_1=0) )}{P(A)}
 \\[\parskip]
 &=\dfrac{P(X_1=0)\cdot P(Y=2)}{P(A)}
 \\[\parskip]
