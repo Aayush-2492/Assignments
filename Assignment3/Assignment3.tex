@@ -149,7 +149,7 @@ $X_i\in(0,1)$ where 0 represents head and 1 represents tail $i\in\{1,2,3,4\}$.
      \hline
 \end{tabular}
 \begin{equation}\label{coin}
-P(X_i=k)=\dfrac{1}{2} 
+\Pr(X_i=k)=\dfrac{1}{2} 
 \end{equation}
 $k\in\{0,1\}$ and $i\in\{1,2,3,4\}$.
 \\
@@ -165,7 +165,7 @@ $Y\in(1,2,3,4,5,6)$ where 1 represents dice showing 1 and so on.
 \end{tabular}
 \\
 \begin{equation}\label{dice}
-P(Y=k)=\dfrac{1}{6} 
+\Pr(Y=k)=\dfrac{1}{6} 
 \end{equation}
 $k\in\{1,2,3,4,5,6\}$.
 \\[20pt]
@@ -193,14 +193,14 @@ $k\in\{1,2,3,4,5,6\}$.
 Let B denote the event that out of last three coins, only one shows tail. \\
 By Binomial Distribution,
 \begin{align}
-P(B)&=\comb{3}{1}\brak{{\dfrac{1}{2}}}^3
+\Pr(B)&=\comb{3}{1}\brak{{\dfrac{1}{2}}}^3
 \\[\parskip]
 &=\dfrac{3}{8}
 \end{align}
 \\\\
 Since tossing a coin and rolling a dice are independent events,
 \begin{equation}\label{independent theorem}
-P( (X_i=k),(Y=l) )= P(X_i=k)\cdot P(Y=l)
+\Pr( (X_i=k),(Y=l) )= \Pr(X_i=k)\cdot \Pr(Y=l)
 \end{equation}
 $k\in\{0,1\}$ and $l\in\{1,2,3,4,5,6\}$.
 \\\\
@@ -208,20 +208,20 @@ Let A denote the event that the score is 2.
 \\\\
 Clearly,
 \begin{align}
-P(A)\nonumber&=P(Y=2|X_1=0)\cdot P(X_1=0) \\
-    &+ P(B|X_1=1)\cdot P(X_1=1) 
+\Pr(A)\nonumber&=\Pr(Y=2|X_1=0)\cdot \Pr(X_1=0) \\
+    &+ \Pr(B|X_1=1)\cdot \Pr(X_1=1) 
 \\[\parskip]
-&=P( (X_1=0),(Y=2) ) + P( (X_1=1), B)
+&=\Pr( (X_1=0),(Y=2) ) + \Pr( (X_1=1), B)
 \\[\parskip]
-&=P(X_1=0)\cdot P(Y=2)+ P(X_1=1) \cdot P(B)
+&=\Pr(X_1=0)\cdot \Pr(Y=2)+ \Pr(X_1=1) \cdot \Pr(B)
 \\[\parskip]
 &=\dfrac{13}{48}
 \end{align}
-We have to find $P(X_1=0|A)$
+We have to find $\Pr(X_1=0|A)$
 \begin{align}
-P(X_1=0|A)&=\dfrac{P(A,(X_1=0) )}{P(A)}
+\Pr(X_1=0|A)&=\dfrac{\Pr(A,(X_1=0) )}{\Pr(A)}
 \\[\parskip]
-&=\dfrac{P(X_1=0)\cdot P(Y=2)}{P(A)}
+&=\dfrac{\Pr(X_1=0)\cdot \Pr(Y=2)}{\Pr(A)}
 \\[\parskip]
 &=0.31
 \end{align}
