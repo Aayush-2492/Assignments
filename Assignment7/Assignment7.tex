@@ -143,42 +143,48 @@ Consider a parallel system with two components. The lifetimes of the two compone
     \item $2$
 \end{enumerate}
 \section*{Solution}
-Consider two random variables X and Y which represent the lifetime of the two components.
+Consider two random variables X and Y which represent the lifetime of the two components namely A and B.
 \begin{equation}
     X \sim Exp(\lambda_X)
 \end{equation}
 \begin{equation}
     Y \sim Exp(\lambda_Y)
 \end{equation}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{figure2.png}
+    \caption{P.D.F. of X }
+    \label{fig:fig_label}
+\end{figure}
 Let $f_X(x)$ denote the probability distribution function for random variable X.
 \begin{align}
-f_{X}(k)=
+f_{X}(x)=
  \begin{cases} 
-      \lambda_X \cdot e^{-\lambda_X \cdot k} & k \geq 0 \\
+      \lambda_X \cdot e^{-\lambda_X \cdot x} & x \geq 0 \\
       0 & otherwise
  \end{cases}
 \end{align}
 Let $f_Y(y)$ denote the probability distribution function for random variable Y.
 \begin{align}
-f_{Y}(k)=
+f_{Y}(y)=
  \begin{cases} 
-      \lambda_Y \cdot e^{-\lambda_Y \cdot k} & k \geq 0 \\
+      \lambda_Y \cdot e^{-\lambda_Y \cdot y} & y \geq 0 \\
       0 & otherwise
  \end{cases}
  \end{align}
  Let $F_X(x)$ denote the cumulative distribution function for random variable X.
 \begin{align}
-F_{X}(k)=
+F_{X}(x)=
  \begin{cases} 
-      1-e^{-\lambda_X \cdot k} & k \geq 0 \\
+      1-e^{-\lambda_X \cdot x} & x \geq 0 \\
       0 & otherwise
  \end{cases}
 \end{align}
 Let $F_Y(y)$ denote the cumulative distribution function for random variable Y.
 \begin{align}
-F_{Y}(k)=
+F_{Y}(y)=
  \begin{cases} 
-      1-e^{-\lambda_Y \cdot k} & k \geq 0 \\
+      1-e^{-\lambda_Y \cdot y} & y \geq 0 \\
       0 & otherwise
  \end{cases}
  \end{align}
@@ -192,40 +198,43 @@ From \ref{meanx} and \ref{meany},
 \begin{equation}\label{lambda}
     \lambda_X = \lambda_Y = 1
 \end{equation}
-Let Z be a random variable such that $Z=min(X,Y)$
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{figure.png}
+    \caption{Parallel system}
+    \label{fig:fig_label}
+\end{figure}
+Let Z be a random variable such that $Z=max(X,Y)$
 \begin{align}
-    P(Z\geq k) &= P(min(X,Y) \geq k)
+    P(Z\leq z) &= P(max(X,Y) \leq z)
     \\
-    &=P(X\geq k,Y\geq k)
+    &=P(X\leq z,Y\leq z)
     \\
-    &=P(X\geq k)\cdot P(Y\geq k)
+    &=P(X\leq z)\cdot P(Y\leq z)
     \\
-    &=(\displaystyle\lim_{a\to\infty} F_X(a)-F_X(k))\cdot (\displaystyle\lim_{a\to\infty} F_Y(a)-F_Y(k))
+    &=(F_X(z)-F_X(0))\cdot (F_Y(z)-F_Y(0))
     \\
-    &=e^{-(\lambda_X+\lambda_Y)\cdot k}
+    &=1+e^{-(\lambda_X)\cdot z}+e^{-(\lambda_X)\cdot z}-e^{-(\lambda_X+\lambda_Y)\cdot z}
 \end{align}
-$P(Z\geq k)$ denotes the probability that the lifetime of the system is $k$.\\
+$P(Z\geq z)$ denotes the probability that the lifetime of the system is $z$.\\
+\begin{equation}
+    P(Z\geq z)  = e^{-(\lambda_X+\lambda_Y)\cdot z}-e^{-(\lambda_X)\cdot z}-e^{-(\lambda_X)\cdot z}
+\end{equation}
 Let V be a random variable such that V represents the lifetime of the system.
 \begin{equation}
-    P(V=k)=e^{-(\lambda_X+\lambda_Y)\cdot k}
+    P(V=v)=e^{-(\lambda_X+\lambda_Y)\cdot v}-e^{-(\lambda_X)\cdot v}-e^{-(\lambda_X)\cdot v}
 \end{equation}
 \begin{align}
-    E(V) &= \int_{0}^{\infty}P(V=k) \,dk
+    E(V) &= \int_{0}^{\infty}P(V=v) \,dv
     \\
-    &=\int_{0}^{\infty}e^{-(\lambda_X+\lambda_Y)\cdot k} \,dk
+    &=\int_{0}^{\infty}(e^{-(\lambda_X+\lambda_Y)\cdot v}-e^{-(\lambda_X)\cdot v}-e^{-(\lambda_X)\cdot v}) \,dv
     \\
-    &= \dfrac{1}{\lambda_X+\lambda_Y}
+    &= \dfrac{1}{\lambda_X}+\dfrac{1}{\lambda_Y}-\dfrac{1}{\lambda_X+\lambda_Y}
 \end{align}
 From \ref{lambda}, 
 \begin{equation}
-    E(V)=\dfrac{1}{2}
+    E(V)=\dfrac{3}{2}
 \end{equation}
-Therefore, option (B) is correct.
+Therefore, option (C) is correct.
 \\
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.7]{figure.png}
-    \caption{Plot for random variable V}
-    \label{fig}
-\end{figure}
 \end{document}
