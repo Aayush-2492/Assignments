@@ -214,27 +214,21 @@ Let Z be a random variable such that $Z=max(X,Y)$
     \\
     &=(F_X(z)-F_X(0))\cdot (F_Y(z)-F_Y(0))
     \\
-    &=1+e^{-(\lambda_X)\cdot z}+e^{-(\lambda_X)\cdot z}-e^{-(\lambda_X+\lambda_Y)\cdot z}
+    &=1-e^{-(\lambda_X)\cdot z}-e^{-(\lambda_Y)\cdot z}+e^{-(\lambda_X+\lambda_Y)\cdot z}
 \end{align}
-$P(Z\geq z)$ denotes the probability that the lifetime of the system is $z$.\\
-\begin{equation}
-    P(Z\geq z)  = e^{-(\lambda_X+\lambda_Y)\cdot z}-e^{-(\lambda_X)\cdot z}-e^{-(\lambda_X)\cdot z}
-\end{equation}
-Let V be a random variable such that V represents the lifetime of the system.
-\begin{equation}
-    P(V=v)=e^{-(\lambda_X+\lambda_Y)\cdot v}-e^{-(\lambda_X)\cdot v}-e^{-(\lambda_X)\cdot v}
-\end{equation}
+$P(Z\leq z)$ denotes the probability that the system dies in the first $z$ seconds.\\
 \begin{align}
-    E(V) &= \int_{0}^{\infty}P(V=v) \,dv
+    Expectation &= \int_{0}^{\infty}z \,d(P(Z\leq z))
     \\
-    &=\int_{0}^{\infty}(e^{-(\lambda_X+\lambda_Y)\cdot v}-e^{-(\lambda_X)\cdot v}-e^{-(\lambda_X)\cdot v}) \,dv
+\nonumber    &=\int_{0}^{\infty}z(\lambda_Xe^{-(\lambda_X)\cdot z}+\lambda_Ye^{-(\lambda_Y)\cdot z}\\
+&-(\lambda_X+\lambda_Y)e^{-(\lambda_X+\lambda_Y)\cdot z}) \,dz
     \\
     &= \dfrac{1}{\lambda_X}+\dfrac{1}{\lambda_Y}-\dfrac{1}{\lambda_X+\lambda_Y}
 \end{align}
 From \ref{lambda}, 
 \begin{equation}
-    E(V)=\dfrac{3}{2}
+    Expectation=\dfrac{3}{2}
 \end{equation}
-Therefore, option (C) is correct.
+Therefore, option C correct.
 \\
 \end{document}
