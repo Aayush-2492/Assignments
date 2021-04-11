@@ -160,7 +160,7 @@ Let $f_X(x)$ denote the probability distribution function for random variable X.
 \begin{align}
 f_{X}(x)=
  \begin{cases} 
-      \lambda_X \cdot e^{-\lambda_X \cdot x} & x \geq 0 \\
+      \lambda_X  e^{-\lambda_X  x} & x \geq 0 \\
       0 & otherwise
  \end{cases}
 \end{align}
@@ -168,7 +168,7 @@ Let $f_Y(y)$ denote the probability distribution function for random variable Y.
 \begin{align}
 f_{Y}(y)=
  \begin{cases} 
-      \lambda_Y \cdot e^{-\lambda_Y \cdot y} & y \geq 0 \\
+      \lambda_Y  e^{-\lambda_Y  y} & y \geq 0 \\
       0 & otherwise
  \end{cases}
  \end{align}
@@ -176,7 +176,7 @@ f_{Y}(y)=
 \begin{align}
 F_{X}(x)=
  \begin{cases} 
-      1-e^{-\lambda_X \cdot x} & x \geq 0 \\
+      1-e^{-\lambda_X  x} & x \geq 0 \\
       0 & otherwise
  \end{cases}
 \end{align}
@@ -184,7 +184,7 @@ Let $F_Y(y)$ denote the cumulative distribution function for random variable Y.
 \begin{align}
 F_{Y}(y)=
  \begin{cases} 
-      1-e^{-\lambda_Y \cdot y} & y \geq 0 \\
+      1-e^{-\lambda_Y  y} & y \geq 0 \\
       0 & otherwise
  \end{cases}
  \end{align}
@@ -210,18 +210,18 @@ Let Z be a random variable such that $Z=max(X,Y)$
     \\
     &=P(X\leq z,Y\leq z)
     \\
-    &=P(X\leq z)\cdot P(Y\leq z)
+    &=P(X\leq z) P(Y\leq z)
     \\
-    &=(F_X(z)-F_X(0))\cdot (F_Y(z)-F_Y(0))
+    &=(F_X(z)-F_X(0)) (F_Y(z)-F_Y(0))
     \\
-    &=1-e^{-(\lambda_X)\cdot z}-e^{-(\lambda_Y)\cdot z}+e^{-(\lambda_X+\lambda_Y)\cdot z}
+    &=1-e^{-(\lambda_X) z}-e^{-(\lambda_Y) z}+e^{-(\lambda_X+\lambda_Y) z}
 \end{align}
 $P(Z\leq z)$ denotes the probability that the system dies in the first $z$ seconds.\\
 \begin{align}
     Expectation &= \int_{0}^{\infty}z \,d(P(Z\leq z))
     \\
-\nonumber    &=\int_{0}^{\infty}z(\lambda_Xe^{-(\lambda_X)\cdot z}+\lambda_Ye^{-(\lambda_Y)\cdot z}\\
-&-(\lambda_X+\lambda_Y)e^{-(\lambda_X+\lambda_Y)\cdot z}) \,dz
+\nonumber    &=\int_{0}^{\infty}z(\lambda_Xe^{-(\lambda_X) z}+\lambda_Ye^{-(\lambda_Y) z}\\
+&-(\lambda_X+\lambda_Y)e^{-(\lambda_X+\lambda_Y) z}) \,dz
     \\
     &= \dfrac{1}{\lambda_X}+\dfrac{1}{\lambda_Y}-\dfrac{1}{\lambda_X+\lambda_Y}
 \end{align}
