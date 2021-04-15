@@ -183,25 +183,16 @@ From equation \ref{cov},
     {Cov(X,Y)}=E(XY)-E(X)E(Y)
 \end{equation}
 \begin{align}
-    -6\leq E(XY)-E(X)E(Y)\leq 6\\
-    0\leq E(XY)\leq12
+    -6\leq E(XY)-E(X)E(Y)\leq 6
 \end{align}
+\begin{equation}\label{exy}
+    0\leq E(XY)\leq12
+\end{equation}
 Also, if X and Y are independent,
 \begin{equation}
     E(XY)=E(X)E(Y)=6
 \end{equation}
 \textbf{Therefore, Option B is incorrect.}\\
-\item
-Now,
-\begin{align}
-    E(X+Y)^2 &= E(X^2)+E(Y^2)+2E(XY)\\
-    E(X+Y)^2 &= 26+2E(XY)
-\end{align}
-From equation 0.0.15,
-\begin{equation}
-    26\leq E(X+Y)^2\leq50
-\end{equation}
-\textbf{Therefore, Option D is correct.}\\
 \item
 Now,
 \begin{align}
@@ -213,5 +204,16 @@ From equation \ref{cov},
     1\leq Var(X+Y)\leq 25
 \end{equation}
 \textbf{Therefore, Option C is correct.}\\
+\item
+Now,
+\begin{align}
+    E(X+Y)^2 &= E(X^2)+E(Y^2)+2E(XY)\\
+    E(X+Y)^2 &= 26+2E(XY)
+\end{align}
+From equation \ref{exy},
+\begin{equation}
+    26\leq E(X+Y)^2\leq50
+\end{equation}
+\textbf{Therefore, Option D is correct.}\\
 \end{enumerate}
 \end{document}
