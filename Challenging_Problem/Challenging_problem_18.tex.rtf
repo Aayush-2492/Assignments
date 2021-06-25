@@ -73,6 +73,8 @@ frame=single, \
 breaklines=true,\
 columns=fullflexible\
 \}\
+\\newcommand\{\\blank\}[1]\{\\hfil\\penalty1000\\hfilneg\\rule[-3pt]\{#1\}\{0.4pt\}\} % nice blank underscores\
+\
 \\begin\{document\}\
 \
 \\newcommand\{\\BEQA\}\{\\begin\{eqnarray\}\}\
@@ -182,8 +184,8 @@ Putting $x=\\dfrac\{1\}\{2 \\sqrt\{2\}\}$, we get,\\\\\
 For $\\beta = 8\\pi$, \
 \\begin\{align\}\
     0 < \\alpha \\leq \\dfrac\{\\sqrt\{2e\}\\sqrt\{8 \\pi-1\}\}\{\\sqrt\{\\pi\} 8\\pi\}\\\\\
-    \\alpha < 1\
-\\end\{align\}\
+\\end\{align\} \
+ Clearly, denominator is greater than numerator, therefore, $\\alpha < 1$\
 \\begin\{align\}\
     4Q\\brak\{\\dfrac\{1\}\{2\}\}\\cdot Q\\brak\{-\\dfrac\{1\}\{2\}\}\\geq \\alpha^\{2\}exp(-2\\pi)\
 \\end\{align\}\
