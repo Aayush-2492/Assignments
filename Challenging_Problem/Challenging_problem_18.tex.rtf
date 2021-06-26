@@ -137,7 +137,7 @@ columns=fullflexible\
 \\renewcommand\{\\thetable\}\{\\theenumi\}\
 %\
 \\section*\{Question\}\
- Prove by properties of Q-function the following inequality, we get,\
+ Prove by properties of Q-function the following inequality,\
  $$1-e^\{-2 \\pi\} \\geq \\brak\{1-2Q\\brak\{\\dfrac\{1\}\{2\}\}\}^2$$\
 \\section*\{Solution\}\
 Simplifying the above inequality.\
@@ -162,21 +162,20 @@ Lets define $f(x)$ as,\
     f(x) = \\alpha e^\{-\\beta x^2\}\
 \\end\{equation\}\
 where $\\alpha$ and $\\beta$ are parameters.\\\\\\\\\
-\\textbf\{Chernoff lower bound property of Complementary Error function\} :\
-\\begin\{equation\}\
-    erfc(x) \\geq f(x)\
-\\end\{equation\}\
-for,\
-$\\beta > 1, 0 < \\alpha \\leq \\dfrac\{\\sqrt\{2e\}\\sqrt\{\\beta-1\}\}\{\\sqrt\{\\pi\}\\beta\} $\
-\\\\\\\\\
 \\textbf\{Property of Q-function\} :\
 \\begin\{equation\}\
     2Q(x\\sqrt\{2\})=erfc(x)\
 \\end\{equation\}\
-\
+\\textbf\{Chernoff lower bound property of Complementary Error function\} :\
+\\begin\{align\}\
+    erfc(x) \\geq f(x)\\\\\
+    2Q(x\\sqrt\{2\})\\geq f(x)\
+\\end\{align\}\
+for,\
+$\\beta > 1, 0 < \\alpha \\leq \\dfrac\{\\sqrt\{2e\}\\sqrt\{\\beta-1\}\}\{\\sqrt\{\\pi\}\\beta\} $\
+\\\\\\\\\
 Since $f(x)$ is even,\
 \\begin\{align\}\
-    erfc(x)\\cdot erfc(-x) \\geq f^\{2\}(x)\\\\\
     4Q(x\\sqrt\{2\})\\cdot Q(-x\\sqrt\{2\}) \\geq \\alpha^\{2\}e^\{-2\\beta x^\{2\}\}\
 \\end\{align\}\
 Putting $x=\\dfrac\{1\}\{2 \\sqrt\{2\}\}$, we get,\\\\\
@@ -197,5 +196,5 @@ Therefore,\
 \\begin\{align\}\
     4Q\\brak\{\\dfrac\{1\}\{2\}\}\\cdot Q\\brak\{-\\dfrac\{1\}\{2\}\}\\geq exp(-2\\pi)\
 \\end\{align\}\
-Hence, Proved\
+Hence proved\
 \\end\{document\}}
