@@ -154,8 +154,8 @@ columns=fullflexible\
     $Q(x)+Q(-x)=1$\
 \\end\{lemma\}\
 \\begin\{lemma\}\
-    Chernoff Lower Bound Property\
-    $$Q(x)+Q(-x)=1$$\
+Chernoff Lower Bound Property\
+    $$Q(x)\\geq f(x)$$\
     where $f(x) = \\alpha \\exp(-\\beta x^2)$ and \\\\[3pt]$\\beta > 1, 0 < \\alpha \\leq \\dfrac\{\\sqrt\{2e\}\\sqrt\{\\beta-1\}\}\{\\sqrt\{\\pi\}\\beta\} $\
 \\end\{lemma\}\
 \
@@ -186,7 +186,7 @@ Using Lemma 0.2 of Q-functions and the fact that $f(x)$ is even.\
 \\end\{align\}\
 Putting $x=\\dfrac\{1\}\{2 \\sqrt\{2\}\}$, we get,\\\\\
 \\begin\{align\}\
-    4Q\\brak\{\\dfrac\{1\}\{2\}\}\\cdot Q\\brak\{-\\dfrac\{1\}\{2\}\}\\geq \\alpha^\{2\}exp\\brak\{\\dfrac\{-\\beta\}\{4\}\}\
+    4Q\\brak\{\\dfrac\{1\}\{2\}\}\\cdot Q\\brak\{-\\dfrac\{1\}\{2\}\}\\geq \\alpha^\{2\}\\exp\\brak\{\\dfrac\{-\\beta\}\{4\}\}\
 \\end\{align\}\
 For $\\beta = 8\\pi$, \
 \\begin\{align\}\
@@ -194,13 +194,13 @@ For $\\beta = 8\\pi$, \
 \\end\{align\} \
  Clearly, denominator is greater than numerator, therefore, $\\alpha < 1$\
 \\begin\{align\}\
-    4Q\\brak\{\\dfrac\{1\}\{2\}\}\\cdot Q\\brak\{-\\dfrac\{1\}\{2\}\}\\geq \\alpha^\{2\}exp(-2\\pi)\
+    4Q\\brak\{\\dfrac\{1\}\{2\}\}\\cdot Q\\brak\{-\\dfrac\{1\}\{2\}\}\\geq \\alpha^\{2\}\\exp(-2\\pi)\
 \\end\{align\}\
 where $\\alpha < 1$\
 \\\\\\\\\
 Therefore,\
 \\begin\{align\}\
-    4Q\\brak\{\\dfrac\{1\}\{2\}\}\\cdot Q\\brak\{-\\dfrac\{1\}\{2\}\}\\geq exp(-2\\pi)\
+    4Q\\brak\{\\dfrac\{1\}\{2\}\}\\cdot Q\\brak\{-\\dfrac\{1\}\{2\}\}\\geq \\exp(-2\\pi)\
 \\end\{align\}\
 \\end\{proof\}\
 Hence proved\
