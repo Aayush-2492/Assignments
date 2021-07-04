@@ -141,10 +141,10 @@ columns=fullflexible
  $$1-\exp(-2 \pi) \geq \brak{1-2Q\brak{\dfrac{1}{2}}}^2$$
 \section*{Solution}
 \textbf{Some Properties of Q function}:
-\begin{lemma}
+\begin{lemma}\label{even}
     $Q(x)+Q(-x)=1$
 \end{lemma}
-\begin{lemma}
+\begin{lemma}\label{bound}
 Chernoff Lower Bound Property
     $$Q(x)\geq f(x)$$
     where $f(x) = \alpha \exp(-\beta x^2)$ and \\[3pt]$\beta > 1, 0 < \alpha \leq \dfrac{\sqrt{2e}\sqrt{\beta-1}}{\sqrt{\pi}\beta} $
@@ -159,7 +159,7 @@ Simplifying the inequality given in question,
     4Q\brak{\dfrac{1}{2}}\brak{1-Q\brak{\dfrac{1}{2}}}&\geq \exp(-2 \pi)
 \end{align}
 
-Using Lemma 0.1 of Q-functions,
+Using Lemma \ref{even} of Q-functions,
 \begin{equation}
     Q(x)+Q(-x)=1
 \end{equation}
@@ -168,11 +168,11 @@ Using Lemma 0.1 of Q-functions,
 \end{align}
 \\
 % Let $erfc(x)$ denote the Complementary Error function.\\
-\begin{lemma}
+\begin{lemma}\label{3}
 $4Q\brak{\dfrac{1}{2}}Q\brak{-\dfrac{1}{2}}\geq \exp(-2 \pi)$
 \end{lemma}
 \begin{proof}
-Using Lemma 0.2 of Q-functions and the fact that $f(x)$ is even.
+Using Lemma \ref{bound} of Q-functions and the fact that $f(x)$ is even.
 \begin{align}
     4Q(x\sqrt{2})Q(-x\sqrt{2}) \geq \alpha^{2}\exp(-2\beta x^{2})
 \end{align}
